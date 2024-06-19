@@ -87,9 +87,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search auto-notify web-search)
 
-source $ZSH/oh-my-zsh.sh  
+# Source oh-my-zsh and plugin files
+
+source $ZSH/oh-my-zsh.sh 
 
 # User configuration
 
@@ -274,7 +276,24 @@ function nvims() {
 bindkey -s ^a "nvims **\t\n"
 bindkey -s "^[^a" "nvims\n"
 
-# --- Define Editor ---
+# --- Plugins ---
+
+# Key Bind for substring-history-search
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# Export config for auto-notify
+
+export AUTO_NOTIFY_THRESHOLD=10 # time is in seconds
+export AUTO_NOTIFY_TITLE="Finished executing '%command' !"
+export AUTO_NOTIFY_BODY="It completed in %elapsed seconds with exit code %exit_code."
+export AUTO_NOTIFY_EXPIRE_TIME=10000 # time is in miliseconds 
+export AUTO_NOTIFY_IGNORE=("docker" "man" "nvim" "nvim-nightly")
+export AUTO_NOTIFY_ICON_SUCCESS=~/.config/auto-notify/success.png
+export AUTO_NOTIFY_ICON_FAILURE=~/.config/auto-notify/failure.png
+
+# --- Define Default Editor ---
 
 EDITOR="nvim"
 

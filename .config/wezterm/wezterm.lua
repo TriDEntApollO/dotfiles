@@ -19,12 +19,17 @@ config.window_background_opacity = 0.75
 
 config.window_decorations = "TITLE | RESIZE"
 
-config.window_frame = {
-  font = wezterm.font('JetBrainsMono Nerd Font', {weight = 'Bold', italic = false}),
-  font_size = 12,
+config.window_padding = {
+  left = '1cell',
+  right = '1cell',
+  top = '0.5cell',
+  bottom = '0.5cell',
 }
 
 config.window_frame = {
+  font = require('wezterm').font 'Roboto',
+  font_size = 12,
+
   inactive_titlebar_bg = '#1d1236',
   active_titlebar_bg = '#4d2d8c',
   inactive_titlebar_fg = '#cccccc',

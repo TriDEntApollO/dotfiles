@@ -288,7 +288,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 export AUTO_NOTIFY_THRESHOLD=10 # time is in seconds
 export AUTO_NOTIFY_TITLE="Finished executing '%command' !"
 export AUTO_NOTIFY_BODY="It completed in %elapsed seconds with exit code %exit_code."
-export AUTO_NOTIFY_EXPIRE_TIME=10000 # time is in miliseconds 
+export AUTO_NOTIFY_EXPIRE_TIME=5000 # time is in miliseconds 
 export AUTO_NOTIFY_IGNORE=("docker" "man" "nvim" "nvim-nightly" "tldr" "lf" "cat" "bat" "eza" "mc" "spf")
 export AUTO_NOTIFY_ICON_SUCCESS=~/.config/auto-notify/success.png
 export AUTO_NOTIFY_ICON_FAILURE=~/.config/auto-notify/failure.png

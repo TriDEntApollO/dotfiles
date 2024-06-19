@@ -13,7 +13,7 @@ Please install these dependencies before proceeding with the installation.
 
 **Warning:** If you skip any of the dependencies, you will have to modify the dot files accordingly.
 
-**Note:** Dependencies that have **"manual installation not required"** dont require you to manually install them. They come pre-pacaked in the dotfiles.
+**Note:** Dependencies that have **"manual installation not required"** dont require you to manually install them, they come pre-pacaked in the dotfiles.
 
 Required for installation:
 

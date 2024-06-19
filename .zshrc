@@ -212,7 +212,7 @@ function _fzf_compgen_dir() {
 
 # Set up better fzf git integration 
 
-source ~/fzf-git.sh/fzf-git.sh
+source ~/.fzf-git.sh
 
 # Set up file preview
 

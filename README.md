@@ -1,11 +1,24 @@
 
 # Trident Apollo's dotfiles
 
-This dotfiles repo also includes gnome-shell themes, icons and cursors and neovim configs.
+What does this dotfiles repository contain?
+
+- ZSH config
+- [Oh my zsh](https://ohmyz.sh/) plugins
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k) config
+- [Wezterm](https://wezfurlong.org/wezterm/index.html) config
+- [Neovim](https://neovim.io/) configs
+- Icon packs
+- Cusror packs
+- Gnome-shell themes
+- [Firefox](https://www.mozilla.org/en-US/firefox/) theme
+- [NightTab](https://github.com/zombieFox/nightTab) extention theme
+- Wallapers
+
 
 ![wezterm-screenshot](https://github.com/TriDEntApollO/dotfiles/assets/68052236/6738f0a6-a2ae-4a2e-a0fe-a3fefd5ccbf6)
 
-**Note:** The terminal (wezterm) background is blured using an third-party gnome plugin called [**Blur My Shell**](https://extensions.gnome.org/extension/3193/blur-my-shell/). Wezterm doesnt have native blur support.
+**Note:** The terminal (wezterm) background is blured using an third-party gnome extention called [**Blur My Shell**](https://extensions.gnome.org/extension/3193/blur-my-shell/). Wezterm doesnt have native blur support.
 
 ## Dependencies
 
@@ -13,7 +26,7 @@ Please install these dependencies before proceeding with the installation.
 
 **Warning:** If you skip any of the dependencies, you will have to modify the dot files accordingly.
 
-**Note:** Dependencies that have **"manual installation not required"** dont require you to manually install them, they come pre-pacaked in the dotfiles.
+**Note:** Dependencies that have **"manual installation not required"** dont require you to manually install them. They come pre-pacaked in the dotfiles.
 
 Required for installation:
 
@@ -21,19 +34,19 @@ Required for installation:
 - [stow](https://www.gnu.org/software/stow/)
 - [nerdfetch](https://github.com/ThatOneCalculator/NerdFetch)
 - [oh my zsh](https://ohmyz.sh/)
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k) **(manual installation not required)**
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k) ***(manual installation not required)***
 
-Cli tools **(recommended for proper installation)**:
+Cli tools ***(recommended for proper installation)***:
 
 - [fzf](https://github.com/junegunn/fzf)
 - [bat](https://github.com/sharkdp/bat)
 - [eza](https://github.com/eza-community/eza)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [neovim](https://neovim.io)
-- [fzf-git.sh](https://github.com/junegunn/fzf-git.sh) (manual installation not required)
+- [fzf-git.sh](https://github.com/junegunn/fzf-git.sh) ***(manual installation not required)***
 
 
-ZSH plugins **(manual installation not required)**:
+ZSH plugins ***(manual installation not required)***:
 
 - [auto-notify](https://github.com/MichaelAquilina/zsh-auto-notify)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
@@ -61,23 +74,38 @@ For the neovim config switcher to be working you need **fzf** installed in your 
 
 **Note:** If you are having problems with any of the tools or plugins please visit their official repository.
 
-### Using git and stow
+### Using git to clone
 
 You can clone the repository wherever you want. (I like to keep it in my home '~/dotfiles').
 
-```bash
+```shell
 git clone https://github.com/TriDEntApollO/dotfiles.git
 ```
+### Git free download
+
+Download the zip file using `curl` 
+
+```shell
+curl -LO https://github.com/TriDEntApollO/dotfiles/archive/refs/heads/main.zip
+```
+
+and extract/unzip the file using the `unzip` command, rename the folder and delete the zip file.
+
+```shell
+unzip main.zip && mv dotfiles-main/ dotfiles/ && rm -f main.zip
+```
+
+**Rest of the installation is same for both processes**
 
 cd into the directory
 
-```bash
+```shell
 cd dotfiles
 ```
 
 run **stow** to create symlink to your home folder
 
-```bash
+```shell
 stow -t ~/ .
 ```
 
@@ -89,21 +117,64 @@ WARNING! stowing . Would cause conflicts:
 All operations aborted.
 ```
 
-after running the above command, you might have skipped some conflicting files or the backup process entirely. Please refer to [Take Backup](https://github.com/TriDEntApollO/dotfiles?tab=readme-ov-file#take-backup-important).
+ you might have skipped some conflicting files or the backup process entirely. Please refer to [Take Backup](https://github.com/TriDEntApollO/dotfiles?tab=readme-ov-file#take-backup-important).
 
-All in a single command 
+Single command install **using git**
 
-```bash
+```shell
 git clone https://github.com/TriDEntApollO/dotfiles.git && cd dotfiles && stow -t ~/ .
 ```
-To add new files or folders to the dotfiles copy your files/folders into thwe dotfiles directory and run the stow command
 
-```bash
+Single command install **using curl**
+
+```shell
+curl -LO https://github.com/TriDEntApollO/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main/ dotfiles/ && rm -f main.zip && cd dotfiles && stow -t ~/ .
+```
+### Updates and file changes
+
+**To update** your dotfiles delete the existing `dotfiles` directory 
+
+```shell
+rm -rf dotfiles
+```
+
+Then re-clone or download the repository via you preferred method and re-run the stow command in the new `dotfiles` directory.
+
+
+**To add new files** or folders to the dotfiles copy your files/folders into the dotfiles directory and run the stow command
+
+```shell
 stow -t ~/ .
 ```
-You will have to do this every time you add a new file/folder into your dotfiles directory
 
-**Alternatively you can download and extract the archive file from releases instead of doing a git clone.**
+You will run this command every time you add a new file/folder into your dotfiles directory.
+
+**Note:** Your files/folders should be structured in the dotfiles folder in the exactly same way it is/should be in your `$HOME` direcotry
+
+For example if your files are structured like this in your **`$HOME`** directory
+
+```
+$HOME
+│
+├── .config
+│   └── wezterm
+│       └── wezterm.lua
+│
+└── .zshrc
+```
+
+Then it should be structure also like this in the **`dotfiles`** directory
+
+```
+dotfiles
+│
+├── .config
+│   └── wezterm
+│       └── wezterm.lua
+│
+└── .zshrc
+```
+
 
 
 ## Note

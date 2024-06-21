@@ -100,7 +100,6 @@ If you want to add custom themes or themes and icon packs you downloaded form th
 
 - For adding **cursor packs** extarct the file and place the folder in the `dotfiles/.local/share/icons` directory. **[Important: your extracted cursors folder should contain `cursors.theme` file, if the folder has a `index.theme` file instead just rename it to `cursors.theme`]**
 
-
 ## Set workspaces
 
 Open the **Settings app** either by running `gnome-control-center` in your terminal or launching it from your app launcher.
@@ -136,9 +135,7 @@ Here's a small bonus on the gnome shell extensions and the settings I use.
 
 **Note:** Extentions marked as **"Required"** are needed to replicate my exact status bar.
 
-
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/8d9ad92c-ab83-449f-828c-18ef2eaec919)
-
 
 ### Space Bar settings
 
@@ -158,6 +155,4 @@ Here's a small bonus on the gnome shell extensions and the settings I use.
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/1cb934d8-2a0d-4905-a92e-79e67cf7944e)
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/fa5b493d-c629-4cfd-8c68-2dbb0b8df406)
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/a20f9345-d822-4d04-a273-cc778b2f7604)
-
-
 **Note:** Extension settings that are not shown are set to default and hence doesn't require any modifications.

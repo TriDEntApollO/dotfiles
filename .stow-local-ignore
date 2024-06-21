@@ -21,6 +21,8 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+^/GNOME.md
+^/FIREFOX.md
 
 Wallpapers
 nightTab-theme.json

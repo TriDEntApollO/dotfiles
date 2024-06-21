@@ -155,4 +155,5 @@ Here's a small bonus on the gnome shell extensions and the settings I use.
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/1cb934d8-2a0d-4905-a92e-79e67cf7944e)
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/fa5b493d-c629-4cfd-8c68-2dbb0b8df406)
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/a20f9345-d822-4d04-a273-cc778b2f7604)
+
 **Note:** Extension settings that are not shown are set to default and hence doesn't require any modifications.

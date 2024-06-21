@@ -100,6 +100,8 @@ If you want to add custom themes or themes and icon packs you downloaded form th
 
 - For adding **cursor packs** extarct the file and place the folder in the `dotfiles/.local/share/icons` directory. **[Important: your extracted cursors folder should contain `cursors.theme` file, if the folder has a `index.theme` file instead just rename it to `cursors.theme`]**
 
+**Note:** You can download themes, icon packs and cursors for GNOME form [Gnome-look.org](https://www.gnome-look.org/browse/).
+
 ## Set workspaces
 
 Open the **Settings app** either by running `gnome-control-center` in your terminal or launching it from your app launcher.

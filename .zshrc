@@ -87,7 +87,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search auto-notify web-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search auto-notify web-search fzf-tab archlinux sudo golang colored-man-pages emoji command-not-found)
 
 # Source oh-my-zsh and plugin files
 
@@ -126,7 +126,7 @@ alias q="exit"
 alias c="clear"
 alias cls="clear"
 alias ll="ls -latr"
-alias ls="ls --color=auto"
+alias ls="ls --color=always"
 alias sudo="sudo "
 alias ws="web_search"
 alias wsh="glow /home/kerick/.oh-my-zsh/plugins/web-search/README.md"
@@ -177,6 +177,10 @@ setopt hist_ignore_dups
 setopt hist_expire_dups_first
 setopt hist_find_no_dups
 setopt hist_verify
+
+# Source pacman -F "command not found" handler
+
+# source .command-not-found.zsh #uncomment this line to use pacman -F intead of pkgfile's package database
 
 # --- FZF (Fuzzy Finder) ---
 

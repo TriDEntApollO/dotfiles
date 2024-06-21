@@ -156,6 +156,11 @@ Here's a small bonus on the gnome shell extensions and the settings I use.
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/23a22791-3c76-456e-980d-5a22b253b0b0)
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/1cb934d8-2a0d-4905-a92e-79e67cf7944e)
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/fa5b493d-c629-4cfd-8c68-2dbb0b8df406)
+
+To make application windows backgorund translucent and blured, Go to the `Applications settings` of **Blur My Shell** extension and click on the **` + Add Window`** button to add a window to the whitelist. Make sure you **already have the app window that you want to blur, opened** in the backgorund. After clicking on the Add Window button a red border appears around the window under the cursor, move your cursor to the window you want to select and click on the window to select it.
+
+If you accidentaly selected the wrong window and want to reselect another window or want to change the name of the entry you can click on the drop down menu of each entry to acces these options.
+
 ![image](https://github.com/Godiesc/firefox-one/assets/68052236/a20f9345-d822-4d04-a273-cc778b2f7604)
 
 **Note:** Extension settings that are not shown are set to default and hence doesn't require any modifications.

@@ -74,6 +74,11 @@ For the neovim config switcher to be working you need **fzf** installed in your 
 
 **Note:** If you are having problems with any of the tools or plugins please visit their official repository.
 
+- To install **gnome-shell theme** and icons see [GNOME.md]()
+
+- To install **Firefox theme** see [FIREFOX.md]()
+
+
 ### Using git to clone
 
 You can clone the repository wherever you want. (I like to keep it in my home '~/dotfiles').

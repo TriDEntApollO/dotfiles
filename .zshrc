@@ -12,6 +12,11 @@ fi
 nerdfetch
 echo ""
 
+# --- Environment variables ---
+
+export XDG_CONFIG_HOME="$HOME/.config/"
+export PATH="/opt/nvim/:/home/kerick/.local/bin:/home/kerick/.cargo/bin:$PATH"
+
 # --- OH-MY-ZSH ---
 
 # If you come from bash you might have to change your $PATH.
@@ -19,7 +24,6 @@ echo ""
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/opt/nvim/:/home/kerick/.local/bin:/home/kerick/.cargo/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -119,42 +123,9 @@ source $ZSH/oh-my-zsh.sh
 # Source powerlevel10k file 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# --- Set up aliases ---
+# --- Source aliases ---
 
-alias cd="z"
-alias q="exit"
-alias c="clear"
-alias cls="clear"
-alias ll="ls -latr"
-alias ls="ls --color=always"
-alias sudo="sudo "
-alias ws="web_search"
-alias wsh="glow /home/kerick/.oh-my-zsh/plugins/web-search/README.md"
-alias yi="yay -S"
-alias yu="yay -Sy"
-alias yr="yay -R"
-alias pi="sudo pacman -S"
-alias pu="sudo pacman -Sy"
-alias pr="sudo pacman -R"
-alias sysupdate="sudo pacman -Syu"
-alias grep="grep --color=auto"
-alias clear="clear && nerdfetch"
-alias src="source ~/.zshrc && clear"
-alias poweroff="sudo shutdown now"
-alias reboot="sudo shutdown -r now"
-alias l="eza --color=always --icons=always --no-quotes"
-alias le="eza --color=always --long --git --icons=always --no-permissions --no-quotes"
-alias la="le --all"
-alias lt="le --all --tree --level=2"
-
-# Neovim aliases
-
-alias vi="nvims"
-alias vim="nvims"
-alias nvim-lunar="lvim"
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-chad="NVIM_APPNAME=NvChad nvim"
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+source ~/.aliases
 
 # --- ZSH ---
 
@@ -225,7 +196,8 @@ source ~/.fzf-git.sh
 
 # Set up file preview
 
-show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+show_file_or_dir_preview="source .zshrc_shared; if [ -d {} ]; then eza --tree --color=always {} | head -200; elif (is_image {}); then chafa -f iterm -s \${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES} {}; else bat -n --color=always --line-range :500 {}; fi"
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
@@ -249,6 +221,16 @@ function _fzf_comprun() {
 # --- BAT (Better cat) ---
 
 export  BAT_THEME="Catppuccin_Mocha"
+
+# --- Tmuxifier ---
+
+# Add bin path to $PATH
+
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
+# Setup tmuxifier
+
+eval "$(tmuxifier init -)"
 
 # --- TheFuck ---
 
@@ -298,7 +280,7 @@ export AUTO_NOTIFY_THRESHOLD=10 # time is in seconds
 export AUTO_NOTIFY_TITLE="Finished executing '%command' !"
 export AUTO_NOTIFY_BODY="It completed in %elapsed seconds with exit code %exit_code."
 export AUTO_NOTIFY_EXPIRE_TIME=5000 # time is in milliseconds 
-export AUTO_NOTIFY_IGNORE=("docker" "man" "nvim" "nvim-nightly" "tldr" "lf" "cat" "bat" "eza" "mc" "spf")
+export AUTO_NOTIFY_IGNORE=("docker" "man" "nvim" "nvim-nightly" "tldr" "cat" "bat" "eza" "mc" "spf" "yazi" "zsh" "bash" "tmux" "zellij" "git diff")
 export AUTO_NOTIFY_ICON_SUCCESS=~/.config/auto-notify/success.png
 export AUTO_NOTIFY_ICON_FAILURE=~/.config/auto-notify/failure.png
 

@@ -1,0 +1,38 @@
+# --- Aliases --- 
+
+alias cd="z"
+alias q="exit"
+alias c="clear"
+alias cls="clear"
+alias ll="ls -latr"
+alias ls="ls --color=always"
+alias sudo="sudo "
+alias ws="web_search"
+alias wsh="glow /home/kerick/.oh-my-zsh/plugins/web-search/README.md"
+alias yi="yay -S"
+alias yu="yay -Sy"
+alias yr="yay -R"
+alias pi="sudo pacman -S"
+alias pu="sudo pacman -Sy"
+alias pr="sudo pacman -R"
+alias sysupdate="sudo pacman -Syu"
+alias grep="grep --color=auto"
+alias clear="clear && nerdfetch"
+alias src="source ~/.zshrc && clear"
+alias poweroff="sudo shutdown now"
+alias reboot="sudo shutdown -r now"
+alias l="eza --color=always --icons=always --no-quotes"
+alias le="eza --color=always --long --git --icons=always --no-permissions --no-quotes"
+alias la="le --all"
+alias lt="le --all --tree --level=2"
+
+# Neovim aliases
+
+alias vi="nvims"
+alias vim="nvims"
+alias nvim-lunar="lvim"
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+

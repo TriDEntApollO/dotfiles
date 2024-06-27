@@ -1,0 +1,8 @@
+function is_image() {
+  if [[ "jpg png jpeg" =~ (^|[[:space:]])${1##*.}($|[[:space:]]) ]] 
+  then 
+    return 0 
+  else
+    return 1
+  fi 
+}

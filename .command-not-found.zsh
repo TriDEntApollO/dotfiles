@@ -6,18 +6,31 @@ command_not_found_handler() {
   pkgs=(${(z)"$(pkgfile -b -v -- "$cmd" 2>/dev/null)"})
   parts=(${(@s: :)pkgs})
   len=${#parts[@]}
+  packages=()
 
   if [[ -n "$pkgs" ]]; then
-    extra=(${(@s:/:)parts[1]})
     printf "The program $yellow'$cmd'$reset may be found in the following$blue packages$reset:\n"
-    printf "  $bullet $purple%s$reset/%s $green%s$reset\n" "$extra[1]" "$extra[2]" "$parts[2]"
-    for pkg in {3..$len}; do
-      printf "  $bullet $parts[$pkg]\n"
+    for pkg in {1..$len}; do
+      line=(${(@s:/:)parts[pkg]})
+      if [[ "$line[1]" == "extra" ]]; then
+        ver="$(expr $pkg + 1)"
+        version="$parts[$ver]"
+        printf "  $bullet $purple%s$reset/%s $green%s$reset\n" "$line[1]" "$line[2]" "$version"
+        packages+=("$line[2]")
+      elif [[ "$parts[$pkg]" != ";" && "$pkg" != "$ver" ]]; then
+        printf "  $bullet $parts[$pkg]\n"
+      fi
     done
-    printf "\n$cyan%s$reset: sudo pacman -S $cmd\n" "Try"
+    printf "\n$cyan%s$reset: sudo pacman -S $blue<package name>$reset\n" "Try"
   else
     printf "$cyan%s$reset:$yellow command not found$reset '$red%s$reset'\n" "zsh" "$cmd"
   fi 1>&2
+
+  printf "\n$yellow%s names$reset: " "Packages'"
+  for pkg in $packages; do
+    printf "$pkg, "
+  done
+  printf "\b\b \n"
 
   return 127
 }

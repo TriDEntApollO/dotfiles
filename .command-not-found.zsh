@@ -22,15 +22,15 @@ command_not_found_handler() {
       fi
     done
     printf "\n$cyan%s$reset: sudo pacman -S $blue<package name>$reset\n" "Try"
+    printf "\n$yellow%s names$reset: " "Packages'"
+    for pkg in $packages; do
+      printf "$pkg, "
+    done
+    printf "\b\b \n"
+
   else
     printf "$cyan%s$reset:$yellow command not found$reset '$red%s$reset'\n" "zsh" "$cmd"
   fi 1>&2
-
-  printf "\n$yellow%s names$reset: " "Packages'"
-  for pkg in $packages; do
-    printf "$pkg, "
-  done
-  printf "\b\b \n"
 
   return 127
 }

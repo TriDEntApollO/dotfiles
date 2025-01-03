@@ -56,7 +56,7 @@ ZSH plugins ***(manual installation not required)***:
 
 ## Take Backup
 
-> [!WARNING]
+> [!CAUTION]
 > Do not skip this step, if you do and the installation fails you will loose all your configs.
 > Plus it's a good habit of keeping backups anyways :)
 
@@ -74,14 +74,15 @@ For the neovim config switcher to be working you need **fzf** installed in your 
 
 ## Installation
 
-**Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Alternatively you can clone the repository, delete the .git direcotry and create your own local git repository. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+> [!WARNING]
+> If you want to give these dotfiles a try or use them, you should first fork this repository, review the file and remove things you don’t want or need. Alternatively you can clone the repository, delete the .git direcotry and create your own local git repository. Don’t blindly use my settings unless you know what that entails. Use at your own risk! I am not responsible for any of your configs or apps becomming corrupted or broken.
 
-**Note:** If you are having problems with any of the tools or plugins please visit their official repository.
+> [!NOTE]
+> If you are having problems with any of the tools or plugins please visit their official repository and documentation.
 
 - To install **gnome-shell theme** and icons see [GNOME.md](https://github.com/TriDEntApollO/dotfiles/blob/main/GNOME.md)
 
 - To install **Firefox theme** see [FIREFOX.md]()
-
 
 ### Using git to clone
 
@@ -139,6 +140,7 @@ Single command install **using curl**
 ```shell
 curl -LO https://github.com/TriDEntApollO/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main/ dotfiles/ && rm -f main.zip && cd dotfiles && stow -t ~/ .
 ```
+
 ### Updates and file changes
 
 **To update** your dotfiles delete the existing `dotfiles` directory 
@@ -186,8 +188,7 @@ dotfiles
 
 
 
-## Note
-
-- This repository is only for maintening my dotfiles please dont excpect active commits and fixes.
-- Don't open issues before going through the official pages of the tool/plugin that you are facing problems with.
-- For a more intutitive step by step tutorial please refer to [this video](https://www.youtube.com/watch?v=y6XCebnB9gs&t=3s).
+> [!IMPORTANT]
+> - This repository is only for maintening my dotfiles please dont excpect active commits and fixes.
+> - Don't open issues before going through the official pages of the tool/plugin that you are facing problems with.
+> - For a more intutitive step by step tutorial please refer to [this video](https://www.youtube.com/watch?v=y6XCebnB9gs&t=3s).

@@ -54,7 +54,11 @@ ZSH plugins ***(manual installation not required)***:
 - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 
 
-## Take Backup [Important]
+## Take Backup
+
+> [!WARNING]
+> Do not skip this step, if you do and the installation fails you will loose all your configs.
+> Plus it's a good habit of keeping backups anyways :)
 
 Before installation please take backup of all your current configuration files **(you only need to move/rename those files which exist in this repository and not any other files)** by either moving them into another direcotry or by renaming them,  example rename your `.zshrc` file to `.zshrc.backup`.
 
